@@ -2,10 +2,26 @@
   "name": "job-tests-smtm",
   "version": "1.0.0",
   "description": "Backend API for users to manage products for an online store",
-  "main": "index.js",
+  "author": "André Ripari",
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "4.17.1",
+    "sequelize": "^6.23.0",
+    "sqlite3": "^5.0.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "André Ripari",
-  "license": "ISC"
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "concurrently": "^8.0.1",
+    "mocha": "^10.2.0",
+    "nodemon": "^2.0.22",
+    "supertest": "^6.3.3"
+  },
+  "engines": {
+    "node": ">=10.16.3"
+  },
+  "engineStrict": true
 }
