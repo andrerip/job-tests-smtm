@@ -32,7 +32,7 @@ Product.init(
       type: Sequelize.TEXT,
       allowNull: true
     }
-  }, { sequelize, modelName: 'product' }
+  }, { sequelize, modelName: 'Product' }
 );
 
 class Category extends Sequelize.Model { }
@@ -46,7 +46,7 @@ Category.init(
       type: Sequelize.TEXT,
       allowNull: true
     }
-  }, { sequelize, modelName: 'category' }
+  }, { sequelize, modelName: 'Category' }
 );
 
 class Tag extends Sequelize.Model { }
@@ -56,7 +56,7 @@ Tag.init(
       type: Sequelize.STRING,
       allowNull: false
     }
-  }, { sequelize, modelName: 'tag' }
+  }, { sequelize, modelName: 'Tag' }
 );
 
 Product.belongsToMany(Category, { through: 'ProductCategory' });
