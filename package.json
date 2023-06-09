@@ -1,0 +1,11 @@
+{
+  "name": "job-tests-smtm",
+  "version": "1.0.0",
+  "description": "Backend API for users to manage products for an online store",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "André Ripari",
+  "license": "ISC"
+}
