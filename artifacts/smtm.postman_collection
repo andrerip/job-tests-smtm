@@ -1,0 +1,509 @@
+{
+	"info": {
+		"_postman_id": "44a20b3b-a33e-4dab-9297-bcaeb6ebef6e",
+		"name": "SMTM Interview Take home",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9278",
+		"_collection_link": "https://red-sunset-882542.postman.co/workspace/Pessoais~4254758a-a654-40e1-83cf-1cd313af0277/collection/9278-44a20b3b-a33e-4dab-9297-bcaeb6ebef6e?action=share&creator=9278&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/v1/products",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"v1",
+						"products"
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "partial name",
+							"disabled": true
+						},
+						{
+							"key": "priceFrom",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "priceTo",
+							"value": "50",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "5",
+							"disabled": true
+						},
+						{
+							"key": "offset",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "orderBy",
+							"value": "price",
+							"disabled": true
+						},
+						{
+							"key": "orderByDesc",
+							"value": "false",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success - No params",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/v1/products",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"products"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "priceFrom",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "priceTo",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "offset",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "orderBy",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "orderByDesc",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Success - Keyword",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/v1/products?keyword=laptop",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"products"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "laptop"
+								},
+								{
+									"key": "priceFrom",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "priceTo",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "offset",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "orderBy",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "orderByDesc",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Success - Price",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/v1/products?priceFrom=0&priceTo=20",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"products"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "laptop",
+									"disabled": true
+								},
+								{
+									"key": "priceFrom",
+									"value": "0"
+								},
+								{
+									"key": "priceTo",
+									"value": "20"
+								},
+								{
+									"key": "limit",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "offset",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "orderBy",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "orderByDesc",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Success - Pagination",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/v1/products?limit=2",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"products"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "laptop",
+									"disabled": true
+								},
+								{
+									"key": "priceFrom",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "priceTo",
+									"value": "20",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "2"
+								},
+								{
+									"key": "offset",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "orderBy",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "orderByDesc",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Success - Order by",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/v1/products?orderBy=price&orderByDesc=true",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"products"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "laptop",
+									"disabled": true
+								},
+								{
+									"key": "priceFrom",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "priceTo",
+									"value": "20",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "offset",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "orderBy",
+									"value": "price"
+								},
+								{
+									"key": "orderByDesc",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Echo dot\",\r\n    \"description\": \"Amazon echo dot\",\r\n    \"price\": 85.49,\r\n    \"inventory\": 958,\r\n    \"sku\": \"PROD44112A\",\r\n    \"mainImageUrl\": \"https://via.placeholder.com/44112A\",\r\n    \"categoryIds\": [\r\n        1,\r\n        4\r\n    ],\r\n    \"tagIds\": [\r\n        1,\r\n        2,\r\n        3\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/products",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success complete",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Echo dot 5\",\r\n    \"description\": \"Amazon echo dot\",\r\n    \"price\": 85.49,\r\n    \"inventory\": 958,\r\n    \"sku\": \"PROD44112A\",\r\n    \"mainImageUrl\": \"https://via.placeholder.com/44112A\",\r\n    \"categoryIds\": [\r\n        1,\r\n        4\r\n    ],\r\n    \"tagIds\": [\r\n        1,\r\n        2,\r\n        3\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/v1/products",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"products"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Success minimum",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Echo dot 7\",\r\n    \"description\": \"Amazon echo dot 77777\",\r\n    \"price\": 200.45,\r\n    \"inventory\": 15000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/v1/products",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"products"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Fail - No body",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/v1/products",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"products"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Fail - Wrong attributes",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titleeee\": \"Echo dot 5\",\r\n    \"description\": \"Amazon echo dot\",\r\n    \"price\": 85.49,\r\n    \"inventory\": 958,\r\n    \"sku\": \"PROD44112A\",\r\n    \"mainImageUrl\": \"https://via.placeholder.com/44112A\",\r\n    \"categoryIds\": [\r\n        1,\r\n        4\r\n    ],\r\n    \"tagIds\": [\r\n        1,\r\n        2,\r\n        3\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/v1/products",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"products"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}

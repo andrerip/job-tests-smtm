@@ -13,6 +13,8 @@ Using the API, users should be able to:
 
 > **All models are defined in src/model.js**
 
+![Entity Diagram](./artifacts/entity-diagram.png)
+
 
 ## Getting Set Up
 
@@ -26,4 +28,13 @@ The exercise requires [Node.js](https://nodejs.org/en/) to be installed. I recom
 
 1. Then run `npm start` which should start the server.
 
-1. For testing, run `npm test`. **Warning: This will drop the database if it exists, re-populating it with the correct data for testing**
+1. You can use Postman with the provided collection file (artifacts/smtp.postman_collection). You just need to import this collection into Postman.
+
+
+## Next improvements
+
+1. Unit testing
+
+1. Improve error returns
+
+1. New endpoints for creating categories and tags

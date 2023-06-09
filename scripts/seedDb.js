@@ -1,4 +1,4 @@
-const { sequelize, Product, Category, Tag } = require('../src/model');
+const { sequelize, Product, Category, Tag } = require('../src/models/model');
 
 /* WARNING THIS WILL DROP THE CURRENT DATABASE */
 seed();
