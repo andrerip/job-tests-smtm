@@ -61,4 +61,80 @@ app.get('/products', async (req, res) => {
     res.status(200).send(products)
 })
 
+/**
+ * Add a new product to the inventory
+ * 
+ * @body {string} title - The title of the product
+ * @body {string} description - The description of the product
+ * @body {number} price - The price of the product
+ * @body {number} inventory - The inventory count of the product
+ * @body {string} [sku] - The SKU of the product
+ * @body {string} [mainImageUrl] - The URL of the product image
+ * @body {number[]} [categoryIds] - The IDs of the categories to add the product to
+ * @body {number[]} [tagIds] - The IDs of the tags to add the product to
+ * @returns {object} product - The product that was created
+ * @throws {object} 400 - Bad request
+ * @throws {object} 500 - Server error
+ * 
+*/
+app.post('/products', async (req, res) => {
+    const { Product, Category, Tag } = req.app.get('models')
+
+    if(!req.body || Object.keys(req.body).length === 0) {
+        return clientError(res, 'No body found!')
+    }
+    const validKeys = ['title', 'description', 'price', 'inventory', 'sku', 'mainImageUrl', 'categoryIds', 'tagIds']
+    const bodyKeys = Object.keys(req.body)
+    const isValidOperation = bodyKeys.every((key) => validKeys.includes(key))
+    if (!isValidOperation) {
+        return clientError(res, 'Invalid body attributes!')
+    }
+
+    const { title, description, price, inventory, sku, mainImageUrl, categoryIds, tagIds } = req.body
+
+    const t = await sequelize.transaction();
+    try {
+        const product = await Product.create({
+            title,
+            description,
+            price,
+            inventory,
+            sku,
+            mainImageUrl
+        })
+        if (categoryIds) {
+            const categories = await Category.findAll({
+                where: {
+                    id: {
+                        [Op.in]: categoryIds
+                    }
+                }
+            })
+            await product.addCategories(categories)
+        }
+        if (tagIds) {
+            const tags = await Tag.findAll({
+                where: {
+                    id: {
+                        [Op.in]: tagIds
+                    }
+                }
+            })
+            await product.addTags(tags)
+        }
+        t.commit();
+        return res.status(201).send(product);
+
+    } catch (error) {
+        console.log(error);
+        t.rollback();
+        return res.status(500).send({ message: 'Server error' })
+    }
+
+})
+
+function clientError(res, message) {
+    return res.status(400).send({ message: message });
+}
+
 module.exports = app;
